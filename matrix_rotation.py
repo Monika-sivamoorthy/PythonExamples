@@ -5,19 +5,21 @@ def matrix_rotate_90(matrix):
     :param matrix: input matrix
     :return:
     """
-    if matrix:
-        row_len = len(matrix)
-        col_len = len(matrix[0])
+    if not matrix:
+        return matrix
 
-        # Step 1: Transpose matrix
-        for r in range(row_len):
-            for c in range(r, col_len):
-                matrix[r][c], matrix[c][r] = matrix[c][r], matrix[r][c]
+    row_len = len(matrix)
+    col_len = len(matrix[0])
 
-        # step 2: Reverse the columns
-        for r in range(col_len):
-            for c in range(row_len//2):
-                matrix[r][c], matrix[r][-c-1] = matrix[r][-c-1], matrix[r][c]
+    # Step 1: Transpose matrix
+    for r in range(row_len):
+        for c in range(r, col_len):
+            matrix[r][c], matrix[c][r] = matrix[c][r], matrix[r][c]
+
+    # step 2: Reverse the columns
+    for r in range(col_len):
+        for c in range(row_len//2):
+            matrix[r][c], matrix[r][-c-1] = matrix[r][-c-1], matrix[r][c]
 
     return matrix
 
