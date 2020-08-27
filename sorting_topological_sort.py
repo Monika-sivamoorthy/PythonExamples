@@ -1,6 +1,11 @@
 """
-Topological sorting can be applied only to Directed Acyclic Graph
-Every DAG will have atleast one topological ordering
+What is topological sort?
+Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that
+for every directed edge u->v, vertex u comes before v in the ordering.
+
+Note:
+1. Topological sorting can be applied only to Directed Acyclic Graph
+2. Every DAG will have atleast one topological ordering
 """
 
 
@@ -33,7 +38,7 @@ class TopologicalSorting:
             self.visited.append(vertex)
             for neighbour in self.graph.adjacency_map[vertex]:
                 self.dfs(neighbour)
-            self.stack.append(vertex)
+            self.stack.insert(0, vertex)
 
     def topological_sort(self):
         for vertex in self.graph.vertices:
@@ -65,6 +70,7 @@ if __name__ == "__main__":
 
 # OUTPUT:
 # ===========================================
+#
 # Adjacency matrix:
 # ----------------------------------------------------------------------
 # [0, 0, 0, 0, 0, 0]
@@ -80,4 +86,6 @@ if __name__ == "__main__":
 #
 # Topological sorting:
 # ----------------------------------------------------------------------
-# [1, 3, 2, 0, 5, 4]
+# [4, 5, 0, 2, 3, 1]
+#
+
