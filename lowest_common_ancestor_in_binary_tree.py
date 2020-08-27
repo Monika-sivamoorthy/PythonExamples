@@ -22,6 +22,14 @@ def lowest_common_ancestor(node, element1, element2):
 
 
 if __name__ == "__main__":
+    """
+    Input tree
+           1
+        /     \
+       2        3
+     /   \     /  \
+    4     5   6    7
+    """
 
     root = Node(1)
     root.left = Node(2)
@@ -32,10 +40,10 @@ if __name__ == "__main__":
     root.right.right = Node(7)
 
     lca = lowest_common_ancestor(root, 3, 6)
-    print(f"Method 1 : \n{lca}")
+    print(f"Method 1 : \n{lca}\n")
 
-    # Constructing binary tree from given input array
-    # This works for complete or full binary tree
+    # Method 2: Constructing binary tree from given input array
+    # Note: This works only for complete or full binary tree
     input_arr = [1, 2, 3, 4, 5, 6, 7]
     node_hash = {}
     len_arr = len(input_arr)
@@ -46,5 +54,14 @@ if __name__ == "__main__":
         else:
             node_hash[index] = Node(input_arr[index], node_hash[2 * index + 1], node_hash[2 * index + 2])
     lca = lowest_common_ancestor(node_hash[0], 3, 6)
-    print(f"Method 2 : \n{lca}")
+    print(f"Method 2 : \n{lca}\n")
 
+
+# OUTPUT:
+# ==================
+#
+# Method 1 :
+# 3
+#
+# Method 2 :
+# 3
