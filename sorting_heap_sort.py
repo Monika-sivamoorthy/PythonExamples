@@ -83,3 +83,20 @@ if __name__ == "__main__":
           f"Max-heap:\n{max_heap}\n\n"
           f"Ascending:\n{sorted_asc}\n"
           f"Descending:\n{sorted_desc}")
+
+
+# OUTPUT:
+# ==================
+#
+# Given:
+# [4, 10, 3, 5, 1]
+#
+# Min-heap:
+# [1, 4, 3, 5, 10]
+# Max-heap:
+# [10, 5, 3, 4, 1]
+#
+# Ascending:
+# [1, 3, 4, 5, 10]
+# Descending:
+# [10, 5, 4, 3, 1]
