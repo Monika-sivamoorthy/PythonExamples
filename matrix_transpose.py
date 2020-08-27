@@ -31,3 +31,18 @@ if __name__ == "__main__":
     transpose = transpose_matrix(input_matrix)
     print(f"\nInput matrix:\n{print_matrix(input_matrix)}\n")
     print(f"Transpose matrix:\n{print_matrix(transpose)}")
+
+#
+# OUTPUT:
+# =======================
+#
+# Input matrix:
+# [1, 2, 3]
+# [4, 5, 6]
+# [7, 8, 9]
+#
+#
+# Transpose matrix:
+# [1, 4, 7]
+# [2, 5, 8]
+# [3, 6, 9]
